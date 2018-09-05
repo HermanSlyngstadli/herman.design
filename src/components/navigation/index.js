@@ -10,7 +10,7 @@ export class Navigation extends Component {
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/work">Work</a></li>
-                    <li><a href="">Contact</a></li>
+                    <li><a href="/contact">Contact</a></li>
                 </ul>
             </nav>
         );
