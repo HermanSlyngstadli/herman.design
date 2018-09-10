@@ -1,5 +1,49 @@
-li {
+menu {
+    width:100%;
+}
+.site-nav {
+    float:right;
+}
+.site-logo {
+    float:left;
+    height:60px;
+    line-height: 60px;
+    margin-left:20px;
+}
+.nav-item-holder {
+    overflow:auto;
+    margin:0;
+    padding:20px;
+}
+.nav-item {
     float:left;
     list-style-type: none;
-    margin-left:20px;
+    margin-right:20px;
+}
+.nav-item a {
+    line-height:40px;
+    color:#333;
+    font-weight:700;
+    position:relative;
+}
+.nav-item a:hover {
+    text-decoration: none;
+    color:#333;
+}
+
+.nav-item a:before {
+    content:' ';
+    display:block;
+    position:absolute;
+    z-index:-1;
+    left:-4px;
+    top:10px;
+    height:10px;
+    width:0;
+    background:blue;
+    transition:.3s width;
+    -webkit-transition:.3s width;
+}
+.nav-item a:hover:before {
+    width:120%;
 }

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import './Work-full.css';
+
 class WorkFull extends React.Component {
 
     constructor() {
@@ -17,28 +19,39 @@ class WorkFull extends React.Component {
             this.setState({
                 projects: response
             })
+            console.log(response);
         })
 
+    }
+
+    createMarkup(str) {
+      return {__html: str};
+    }
+
+    projectContent(str) {
+      return <div dangerouslySetInnerHTML={this.createMarkup(str)} />;
     }
 
     render() {
         const projects = this.state.projects.map((project) => {
             return (
-                <article key={project.id}>
-                    <Link to={{
-                        pathname: '/work/' + project.slug,
-                        state: {
-                            postId: project.id
-                        }
-                    }}>
-                        {project.title.rendered}
-                    </Link>
-                    <div>{project.content.rendered}</div>
-                </article>
+                <Link key={project.id} className="work-project-link" to={{
+                    pathname: '/work/' + project.slug,
+                    state: {
+                        postId: project.id
+                    }
+                }}>
+                    <article className="work-project">
+                        <h2>{project.title.rendered}</h2>
+                        <div>{project.description}</div>
+
+                    </article>
+                </Link>
             );
         });
         return(
             <div>
+                <h1 className="page-title">.work</h1>
                 {projects}
             </div>
         );
@@ -49,6 +62,8 @@ class WorkFull extends React.Component {
 export default WorkFull;
 
 /*
+//<div>{this.projectContent(project.content.rendered)}</div>
+
 axios.get('https://herman.design/wp-json/wp/v2/posts')
     .then( function(response) {
             const projects = response.data.map((project, i) =>

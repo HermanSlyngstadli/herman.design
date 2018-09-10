@@ -1,0 +1,7 @@
+.content-outer-wrapper {
+    overflow: auto;
+    width:100%;
+}
+.content-inner-wrapper {
+    margin:0 auto;
+}
