@@ -42,6 +42,9 @@ class WorkFull extends React.Component {
                     }
                 }}>
                     <article className="work-project">
+                        <div className="work-project-image-holder">
+                            <div className="work-project-image" background-image={"url("+")"}></div>
+                        </div>
                         <h2>{project.title.rendered}</h2>
                         <div>{project.description}</div>
 

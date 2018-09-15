@@ -1,49 +1,213 @@
-menu {
+nav.main-nav {
     width:100%;
-}
-.site-nav {
-    float:right;
+    height:60px;
+    position:absolute;
+    top:0;
+    left:0;
 }
 .site-logo {
     float:left;
     height:60px;
+    background:blue;
+    color:#fff;
     line-height: 60px;
-    margin-left:20px;
+    font-weight:700;
+    padding-left:20px;
+    padding-right:20px;
 }
 .nav-item-holder {
-    overflow:auto;
+    float:right;
+    height:60px;
+    padding:10px;
     margin:0;
-    padding:20px;
 }
 .nav-item {
-    float:left;
-    list-style-type: none;
-    margin-right:20px;
-}
-.nav-item a {
     line-height:40px;
+    margin-right:20px;
     color:#333;
     font-weight:700;
-    position:relative;
+    float:left;
+    position: relative;
 }
-.nav-item a:hover {
+.nav-item:last-child {
+    margin:0;
+}
+.nav-item:hover {
     text-decoration: none;
     color:#333;
 }
-
-.nav-item a:before {
+.nav-item:before {
     content:' ';
     display:block;
     position:absolute;
     z-index:-1;
     left:-4px;
-    top:10px;
+    top:20px;
     height:10px;
     width:0;
     background:blue;
     transition:.3s width;
     -webkit-transition:.3s width;
 }
-.nav-item a:hover:before {
+.nav-item:hover:before {
     width:120%;
 }
+@media only screen and (max-width:700px) {
+    .nav-item-holder {
+        position:absolute;
+        left:-1000px;
+        z-index:3;
+        clear:both;
+        height:auto;
+        width:100%;
+        transition:.3s left ease;
+        background:blue;
+        padding-top:60px;
+    }
+    .nav-item-holder.open {
+        left:0;
+    }
+    .nav-item {
+        height:60px;
+        width:100%;
+        color:#fff;
+        text-align:center;
+        line-height:60px;
+        font-size:2em;
+    }
+}
+
+/*############# burger*/
+.nav-burger {
+    position:absolute;
+    top:0;
+    right:0;
+    z-index:4;
+    height:60px;
+    width:90px;
+    background:none;
+    border:0;
+    display:none;
+}
+.nav-burger div {
+    position: absolute;
+    top:50%;
+    height:20px;
+    height:2rem;
+    transform:translateY(-50%);
+}
+.nav-burger div:before {
+    content:'MENU ';
+    display: inline-block;
+    font-weight:700;
+    font-size: 1.5rem;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: .1rem;
+    transition: .6s background;
+}
+button.nav-burger:focus {
+    border:none;
+    outline:none;
+}
+button.nav-burger span {
+    background: #000;
+    display: block;
+    position: absolute;
+    height: 3px;
+    height: .3rem;
+    left: 55px;
+    left: 5.5rem;
+    top: 8.5px;
+    top: .85rem;
+    width:20px;
+    transition: .3s background;
+}
+button.nav-burger span:after, button.nav-burger span:before {
+    background-color: #000;
+    content: '';
+    display: block;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    height: .3rem;
+    transition-duration: .5s,.5s;
+}
+button.nav-burger span:before {
+    transition-property: top,transform;
+    top: -6px;
+    top: -.6rem;
+}
+button.nav-burger span:after {
+    transition-property: bottom, transform;
+    bottom: -6px;
+    bottom: -.6rem;
+}
+.nav-item-holder.open + button.nav-burger {
+    color:#fff;
+}
+.nav-item-holder.open + button.nav-burger span {
+    background:none;
+}
+.nav-item-holder.open + button.nav-burger span:before, .nav-item-holder.open + button.nav-burger span:after {
+    background:#fff;
+}
+.nav-item-holder.open + button.nav-burger span:before {
+    top: 0;
+    transform: rotate(135deg);
+}
+.nav-item-holder.open + button.nav-burger span:after {
+    bottom: 0;
+    transform: rotate(-135deg);
+}
+
+
+@media only screen and (max-width:700px) {
+    .nav-burger {
+        display:block;
+    }
+}
+/*
+.nav-menu-text {
+    float:left;
+    line-height:40px;
+}
+.nav-burger-holder-outer {
+    display:none;
+    float:right;
+    height:40px;
+    position:absolute;
+    top:0;
+    right:0;
+}
+.nav-burger-holder-inner {
+    position:relative;
+    float:right;
+    height:100%;
+    width:40px;
+}
+.nav-burger-item-holder {
+    position:relative;
+    transition:.3s ease transform;
+    height:100%;
+    width:100%;
+}
+.nav-burger-item {
+    position:absolute;
+    height:14.3%;
+    width:100%;
+    transform-origin: center;
+    top:50%;
+    background:blue;
+}
+.nav-burger-item:nth-child(1) {
+    transform:translate(0,-12px);
+}
+.nav-burger-item:nth-child(3) {
+    transform:translate(0,12px);
+}
+
+*/

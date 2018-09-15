@@ -1,5 +1,7 @@
 header {
     height:60px;
-    /*background:#ddd;*/
     width:100%;
+    position:absolute;
+    top:0;
+    z-index: 1;
 }

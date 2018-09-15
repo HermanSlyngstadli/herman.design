@@ -5,21 +5,29 @@ import './Navigation.css';
 
 export class Navigation extends Component {
 
+    toggleNav() {
+        return '2';
+    }
+
     render() {
         return(
-            <menu>
-                <Link to='/'><div className="site-logo">herman slyngstadli</div></Link>
-                <nav className="site-nav">
-                    <ul className="nav-item-holder">
-
-                        <li className="nav-item"><a href="/work">Work</a></li>
-                        <li className="nav-item"><a href="/not-work">Not work</a></li>
-                        <li className="nav-item"><a href="/contact">Contact</a></li>
-                        <li className="nav-item social"><a href="https://www.instagram.com/hermanslyngstadli/">Instagram</a></li>
-                        <li className="nav-item social"><a href="https://www.linkedin.com/in/hermanslyngstadli/">LinkedIn</a></li>
-                    </ul>
-                </nav>
-            </menu>
+            <nav className="main-nav">
+                <Link to='/' className="site-logo">HERMAN SLYNGSTADLI</Link>
+                <div className="nav-item-holder" id="navigation">
+                    <Link to="/work"  className="nav-item social">Work</Link>
+                    <Link to="/not-work" className="nav-item">Not work</Link>
+                    <Link className="nav-item" to="/contact">Contact</Link>
+                    <Link to="https://www.instagram.com/hermanslyngstadli/" className="nav-item social">Instagram</Link>
+                    <Link to="https://www.linkedin.com/in/hermanslyngstadli/" className="nav-item social">LinkedIn</Link>
+                </div>
+                <button className="nav-burger" onClick={function(){
+                    var element = document.getElementById("navigation");
+                    element.classList.toggle("open"); }}>
+                    <div>
+                        <span></span>
+                    </div>
+                </button>
+            </nav>
         );
     }
 
