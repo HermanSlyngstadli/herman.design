@@ -10,7 +10,7 @@ class Project extends React.Component {
         }
     }
 
-    // ----- Fange 404 ved ukjent post
+    // Må gjøres: ----- Fange 404 ved ukjent post
 
     componentDidMount() {
         fetch('https://herman.design/wp-json/wp/v2/posts?slug='+this.state.slug)
@@ -21,6 +21,15 @@ class Project extends React.Component {
             })
         })
     }
+
+    createMarkup(str) {
+      return {__html: str};
+    }
+
+    projectContent(str) {
+      return <div dangerouslySetInnerHTML={this.createMarkup(str)} />;
+    }
+
     render() {
         const project = this.state.project.map((project) => {
             return (
@@ -28,14 +37,14 @@ class Project extends React.Component {
                     <h1>
                         {project.title.rendered}
                     </h1>
-                    <div>{project.content.rendered}</div>
+                    <div>{this.projectContent(project.content.rendered)}</div>
                 </article>
             );
         });
         return(
             <div>
+                <Link to='/work'>{'<----Back'}</Link>
                 {project}
-                <Link to='/work'>Back</Link>
             </div>
 
         );

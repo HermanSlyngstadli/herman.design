@@ -4,23 +4,20 @@
     margin-bottom:50px;
 }
 .work-project-link {
-    color:#212121;
-}
-.work-project-link:hover {
-    text-decoration: none;
-}
-.work-project {
-    height:100px;
-}
-.work-project:hover {
-    background:#ddd;
-}
-.work-project-image-holder {
     height:200px;
-    width:100%;
+    display: block;
+    background:#eee;
+    padding-left:0 !important;
+    padding-right:0 !important;
     position: relative;
 }
-.work-project-image {
-    height:100%;
-    width:100%;
+.work-project-link:hover {
+    background:#ddd;
+}
+.work-project-title {
+    margin-top:0;
+    margin-bottom:0;
+    position:absolute;
+    bottom:20px;
+    left:10px;
 }
