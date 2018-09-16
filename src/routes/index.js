@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Home from './Home';
 import Work from './Work';
+import NotWork from './NotWork';
 import Contact from './Contact';
 import NoMatch from './NoMatch';
 
@@ -11,6 +12,7 @@ export default () =>
     <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/work" component={Work} />
+        <Route path="/not-work" component={NotWork} />
         <Route path="/contact" component={Contact} />
         <Route component={NoMatch} />
     </Switch>
