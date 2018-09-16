@@ -17,8 +17,8 @@ export class Navigation extends Component {
                     <Link to="/work"  className="nav-item social">Work</Link>
                     <Link to="/not-work" className="nav-item">Not work</Link>
                     <Link className="nav-item" to="/contact">Contact</Link>
-                    <Link to="https://www.instagram.com/hermanslyngstadli/" className="nav-item social">Instagram</Link>
-                    <Link to="https://www.linkedin.com/in/hermanslyngstadli/" className="nav-item social">LinkedIn</Link>
+                    <a href="https://www.instagram.com/hermanslyngstadli/" className="nav-item social">Instagram</a>
+                    <a href="https://www.linkedin.com/in/hermanslyngstadli/" className="nav-item social">LinkedIn</a>
                 </div>
                 <button className="nav-burger" onClick={function(){
                     var element = document.getElementById("navigation");

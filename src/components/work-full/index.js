@@ -17,7 +17,7 @@ class WorkFull extends React.Component {
         .then(response => response.json())
         .then(response => {
             this.setState({
-                projects: response
+                projects: response.reverse()
             })
             console.log(response);
         })
