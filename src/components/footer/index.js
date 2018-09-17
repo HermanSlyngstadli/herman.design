@@ -6,7 +6,7 @@ export class Footer extends Component {
 
     render() {
         return(
-            <footer><a href="">Say Hi!</a></footer>
+            <footer><a href="mailto:herman@slyngstadli.no">Say Hi!</a></footer>
         );
     }
 

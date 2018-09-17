@@ -1,7 +1,10 @@
 .page-title {
+    margin-left:20px;
     font-weight:700;
     font-size:3em;
-    margin-bottom:50px;
+}
+.page-sorting {
+    margin-left:20px;
 }
 .work-project-link {
     height:500px;
@@ -19,7 +22,7 @@
     height:100%;
     width:100%;
     background:none;
-    opacity: 0.3;
+    opacity: 0.8;
     transition:background .3s ease;
 }
 .work-project-link:hover:after {
@@ -29,15 +32,26 @@
     height:100%;
     width:100%;
 }
-.work-project-title {
-    margin-top:0;
-    margin-bottom:0;
+.work-project-title-holder {
     position:absolute;
+    width:100%;
     z-index:2;
+    transform:translateY(-50%);
     color:#fff;
-    bottom:20px;
-    left:10px;
+    top:50%;
 }
+.work-project-title {
+    text-align:center;
+    width:100%;
+    font-size:40px;
+    font-weight:700;
+    transition:opacity .3s ease;
+    opacity:0;
+}
+.work-project-link:hover .work-project-title {
+    opacity:1;
+}
+
 .work-project-image {
     height:100%;
     width:100%;

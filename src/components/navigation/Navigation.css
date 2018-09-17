@@ -2,18 +2,25 @@ nav.main-nav {
     width:100%;
     height:60px;
     position:absolute;
+    background:#fff;
     top:0;
     left:0;
+    z-index:-2;
 }
 .site-logo {
     float:left;
     height:60px;
-    background:blue;
-    color:#fff;
+    /*background:blue;*/
+    color:#000;
     line-height: 60px;
-    font-weight:700;
+    font-size:20px;
+    /*font-weight:700;*/
     padding-left:20px;
     padding-right:20px;
+}
+.site-logo:hover {
+    text-decoration:none;
+    color:blue;
 }
 .nav-item-holder {
     float:right;
@@ -56,7 +63,7 @@ nav.main-nav {
     .nav-item-holder {
         position:absolute;
         left:-1000px;
-        z-index:3;
+        z-index:10;
         clear:both;
         height:auto;
         width:100%;
@@ -82,7 +89,7 @@ nav.main-nav {
     position:absolute;
     top:0;
     right:0;
-    z-index:4;
+    z-index:15;
     height:60px;
     width:90px;
     background:none;

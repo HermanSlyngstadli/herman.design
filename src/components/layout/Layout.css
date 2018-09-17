@@ -1,6 +1,7 @@
 .content-outer-wrapper {
     overflow: auto;
     width:100%;
+    padding-top:60px;
 }
 .content-inner-wrapper {
     width:100%;

@@ -36,17 +36,17 @@ class WorkFull extends React.Component {
                         postId: project.id
                     }
                 }}>
-                    <h2 className="work-project-title">{project.title.rendered}</h2>
                     <article className="work-project">
                     <div style={styles} className="work-project-image"></div>
                     </article>
+                    <div className="work-project-title-holder"><h2 className="work-project-title">{project.title.rendered}</h2></div>
                 </Link>
             );
         });
         return(
             <div>
                 <h1 className="page-title">work</h1>
-                <div><Link to="/work">All</Link> / <Link to="/work">Digital</Link> / <Link to="/work">Tangible</Link></div>
+                <div className="page-sorting"><Link to="/work">All</Link> / <Link to="/work">Digital</Link> / <Link to="/work">Tangible</Link></div>
                 <div>{projects}</div>
             </div>
         );
