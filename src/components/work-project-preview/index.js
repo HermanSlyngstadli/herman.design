@@ -34,27 +34,38 @@ class Project extends React.Component {
 
     render() {
         const project = this.state.project.map((project) => {
+            var styles = {
+                backgroundImage:'url('+project.fimg_url+')'
+            }
             return (
                 <article key={project.id}>
-                    <h1>
-                        {project.title.rendered}
-                    </h1>
+                    <div className="project-hero-image-holder">
+                        <div className="project-hero-image" style={styles}></div>
+                        <div className="project-hero-info">
+                            <span>Digital / Website</span>
+                            <h1 className="project-hero-title"> {project.title.rendered}</h1>
+                            <p>Lorem ipsum dolor site amet. Mauris feugiat nulla sed nibh dictum blandit.</p>
+                        </div>
+                    </div>
+                    <div className="project-component-small-container">
+                        <Link to='/work'>{'<----Back to projects'}</Link>
+                    </div>
                     <div>{this.projectContent(project.content.rendered)}</div>
+                    <div className="previewed-project-floating-title">{'Project: '+project.title.rendered}</div>
                 </article>
             );
         });
         return(
             <div>
-                <Link to='/work'>{'<----Back'}</Link>
                 {project}
-                <div className="more-projects">
+                <div className="more-projects project-component-small-container">
                     <h2>More projects?</h2>
                     <div>
-                        <Link to="/herman-design">{'Herman.design'}</Link>
-                        <Link to="/spotta">{'Spotta'}</Link>
-                        <Link to="/chair">{'Chair'}</Link>
-                        <Link to="/norway-medical">{'Norway Medical'}</Link>
-                        <Link to="/foodpring">{'Foodprint'}</Link>
+                        <Link to="/work/herman-design">{'Herman.design'}</Link>
+                        <Link to="/work/spotta">{'Spotta'}</Link>
+                        <Link to="/work/chair">{'Chair'}</Link>
+                        <Link to="/work/norway-medical">{'Norway Medical'}</Link>
+                        <Link to="/work/foodprint">{'Foodprint'}</Link>
                     </div>
                 </div>
             </div>

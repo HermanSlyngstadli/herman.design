@@ -26,8 +26,11 @@ class WorkFull extends React.Component {
 
     render() {
         const projects = this.state.projects.map((project) => {
+            var styles={
+                backgroundImage:'url('+project.fimg_url+')'
+            };
             return (
-                <Link key={project.id} className="work-project-link col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12" to={{
+                <Link key={project.id} className="work-project-link col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12" to={{
                     pathname: '/work/' + project.slug,
                     state: {
                         postId: project.id
@@ -35,7 +38,7 @@ class WorkFull extends React.Component {
                 }}>
                     <h2 className="work-project-title">{project.title.rendered}</h2>
                     <article className="work-project">
-                        <img src={project.fimg_url} className="work-project-image" />
+                    <div style={styles} className="work-project-image"></div>
                     </article>
                 </Link>
             );
@@ -43,7 +46,7 @@ class WorkFull extends React.Component {
         return(
             <div>
                 <h1 className="page-title">work</h1>
-                <div><Link to="/work">Digital</Link> / <Link to="/work">Tangible</Link></div>
+                <div><Link to="/work">All</Link> / <Link to="/work">Digital</Link> / <Link to="/work">Tangible</Link></div>
                 <div>{projects}</div>
             </div>
         );

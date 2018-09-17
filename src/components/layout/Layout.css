@@ -3,10 +3,7 @@
     width:100%;
 }
 .content-inner-wrapper {
-    margin:0 auto;
-    padding-top:60px;
-    padding-left:0 !important;
-    padding-right:0 !important;
+    width:100%;
 }
 #top-scroller {
     position: fixed;
