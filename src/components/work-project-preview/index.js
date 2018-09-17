@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import './WorkProjectPreview.css';
+
 class Project extends React.Component {
     constructor(props) {
         super(props);
@@ -45,6 +47,16 @@ class Project extends React.Component {
             <div>
                 <Link to='/work'>{'<----Back'}</Link>
                 {project}
+                <div className="more-projects">
+                    <h2>More projects?</h2>
+                    <div>
+                        <Link to="/herman-design">{'Herman.design'}</Link>
+                        <Link to="/spotta">{'Spotta'}</Link>
+                        <Link to="/chair">{'Chair'}</Link>
+                        <Link to="/norway-medical">{'Norway Medical'}</Link>
+                        <Link to="/foodpring">{'Foodprint'}</Link>
+                    </div>
+                </div>
             </div>
 
         );

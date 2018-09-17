@@ -4,7 +4,7 @@ import Layout from '../components/layout/';
 
 const Work = () => (
     <Layout>
-        not work
+        {'I sketch and draw, take photos and stuff.'}
     </Layout>
 )
 

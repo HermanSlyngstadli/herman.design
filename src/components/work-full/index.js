@@ -13,13 +13,13 @@ class WorkFull extends React.Component {
     }
 
     componentDidMount() {
-        fetch('https://herman.design/wp-json/wp/v2/posts')
+        fetch('https://herman.design/wp-json/wp/v2/posts?per_page=50')
         .then(response => response.json())
         .then(response => {
             this.setState({
                 projects: response.reverse()
             })
-            console.log(response);
+            //console.log(response);
         })
 
     }
@@ -33,15 +33,17 @@ class WorkFull extends React.Component {
                         postId: project.id
                     }
                 }}>
+                    <h2 className="work-project-title">{project.title.rendered}</h2>
                     <article className="work-project">
-                        <h2 className="work-project-title">{project.title.rendered}</h2>
+                        <img src={project.fimg_url} className="work-project-image" />
                     </article>
                 </Link>
             );
         });
         return(
             <div>
-                <h1 className="page-title">.work</h1>
+                <h1 className="page-title">work</h1>
+                <div><Link to="/work">Digital</Link> / <Link to="/work">Tangible</Link></div>
                 <div>{projects}</div>
             </div>
         );

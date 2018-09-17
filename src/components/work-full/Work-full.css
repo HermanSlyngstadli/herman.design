@@ -5,14 +5,15 @@
 }
 .work-project-link {
     height:200px;
+    overflow:hidden;
     display: block;
-    background:#eee;
     padding-left:0 !important;
     padding-right:0 !important;
     position: relative;
 }
 .work-project-link:hover {
-    background:#ddd;
+    background:#fff;
+    opacity: 0.3;
 }
 .work-project-title {
     margin-top:0;
@@ -20,4 +21,14 @@
     position:absolute;
     bottom:20px;
     left:10px;
+}
+.work-project-image {
+    height:100%;
+    width:100%;
+    background-size:cover;
+    transform-origin: center;
+    transition:transform .3s ease;
+}
+.work-project-link:hover .work-project-image{
+    transform:scale(110%);
 }
