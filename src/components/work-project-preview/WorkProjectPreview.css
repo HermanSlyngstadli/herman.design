@@ -1,7 +1,7 @@
 /*==== HERO IMAGE */
 .project-hero-image-holder {
     width:100%;
-    height:40rem;
+    height:50rem;
     position: relative;
 }
 .project-hero-image {
@@ -36,8 +36,54 @@ h1.project-hero-title {
     font-size:4em;
 }
 .project-hero-info p {
-    width:400px;
+    max-width:400px;
     color:#fff;
+}
+
+
+.back-to-projects {
+    padding-top:30px;
+    padding-bottom:20px;
+    position: relative;
+}
+.back-to-projects a {
+    position:absolute;
+}
+.back-to-projects span.back-to-projects-text {
+    margin-left:35px;
+    font-weight: 700;
+    color:#000;
+}
+.back-to-projects span.back-to-projects-arrow {
+    content: ' ';
+    display:block;
+    position:absolute;
+    top:8px;
+    height:3px;
+    width:25px;
+    background:#000;
+}
+.back-to-projects span.back-to-projects-arrow:before {
+    content: ' ';
+    display:block;
+    position:absolute;
+    height:3px;
+    width:10px;
+    top:1px;
+    background:#000;
+    transform: rotate(-45deg);
+    transform-origin: left;
+}
+.back-to-projects span.back-to-projects-arrow:after {
+    content: ' ';
+    display:block;
+    position:absolute;
+    height:3px;
+    width:10px;
+    top:-1px;
+    background:#000;
+    transform: rotate(45deg);
+    transform-origin: left;
 }
 /*==== TITLE */
 h2 {

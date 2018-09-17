@@ -47,8 +47,8 @@ class Project extends React.Component {
                             <p>Lorem ipsum dolor site amet. Mauris feugiat nulla sed nibh dictum blandit.</p>
                         </div>
                     </div>
-                    <div className="project-component-small-container">
-                        <Link to='/work'>{'<----Back to projects'}</Link>
+                    <div className="project-component-small-container back-to-projects">
+                        <Link to='/work'><span className="back-to-projects-arrow"></span><span className="back-to-projects-text">{'Back to projects'}</span></Link>
                     </div>
                     <div>{this.projectContent(project.content.rendered)}</div>
                     <div className="previewed-project-floating-title">{'Project: '+project.title.rendered}</div>
@@ -61,7 +61,6 @@ class Project extends React.Component {
                 <div className="more-projects project-component-small-container">
                     <h2>More projects?</h2>
                     <div>
-                        <Link to="/work/herman-design">{'Herman.design'}</Link>
                         <Link to="/work/spotta">{'Spotta'}</Link>
                         <Link to="/work/chair">{'Chair'}</Link>
                         <Link to="/work/norway-medical">{'Norway Medical'}</Link>
