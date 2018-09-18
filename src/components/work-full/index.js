@@ -14,7 +14,7 @@ class WorkFull extends React.Component {
     }
 
     componentDidMount() {
-        fetch('https://slyngstadli.no/herman/wp-json/wp/v2/posts?per_page=50')
+        fetch('http://slyngstadli.no/herman/wp-json/wp/v2/posts?per_page=50')
         .then(response => response.json())
         .then(response => {
             this.setState({

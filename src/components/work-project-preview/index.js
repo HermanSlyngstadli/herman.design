@@ -21,7 +21,7 @@ class Project extends React.Component {
     // Må gjøres: ----- Fange 404 ved ukjent post
 
     componentDidMount() {
-        fetch('https://slyngstadli.no/herman/wp-json/wp/v2/posts?slug='+this.state.slug)
+        fetch('http://slyngstadli.no/herman/wp-json/wp/v2/posts?slug='+this.state.slug)
         .then(response => response.json())
         .then(response => {
             this.setState({
