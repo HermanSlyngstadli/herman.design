@@ -5,6 +5,7 @@ import Home from './Home';
 import Work from './Work';
 import NotWork from './NotWork';
 import Contact from './Contact';
+import Thanks from './Thanks';
 import NoMatch from './NoMatch';
 
 export default () =>
@@ -14,6 +15,7 @@ export default () =>
         <Route path="/work" component={Work} />
         <Route path="/not-work" component={NotWork} />
         <Route path="/contact" component={Contact} />
+        <Route path="/thanks" component={Thanks} />
         <Route component={NoMatch} />
     </Switch>
 </BrowserRouter>);

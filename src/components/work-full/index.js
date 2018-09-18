@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {Helmet} from "react-helmet";
 
 import './Work-full.css';
 
@@ -45,6 +46,26 @@ class WorkFull extends React.Component {
         });
         return(
             <div>
+                <Helmet>
+                    <meta name="description" content="Herman Slyngstadli - Design student specialising in Interaction and Service Design at NTNU, Norway." />
+                    <meta name="keywords" content="service design, interaction design, design, portfolio, ux, ui, herman slyngstadli" />
+
+                    <meta property="og:site_name" content="Herman Slyngstadli"/>
+                    <meta property="og:url"                content="http://herman.design/work" />
+                    <meta property="og:type"               content="website" />
+                    <meta property="og:title"              content="Work | Herman Slyngstadli" />
+                    <meta property="og:description"        content="Herman Slyngstadli - Design student specialising in Interaction and Service Design at NTNU, Norway." />
+                    <meta property="og:image"              content="" />
+
+                    <meta name="twitter:title" content={"Work | Herman Slyngstadli"}/>
+                    <meta name="twitter:image" content=""/>
+                    <meta name="twitter:url" content="http://herman.design/work"/>
+                    <meta name="twitter:card" content="summary"/>
+                    <meta name="twitter:description" content="Herman Slyngstadli - Design student specialising in Interaction and Service Design at NTNU, Norway."/>
+
+                    <title>{'Work | Herman Slyngstadli'}</title>
+                </Helmet>
+
                 <h1 className="page-title">work</h1>
                 <div className="page-sorting"><Link to="/work">All</Link> / <Link to="/work">Digital</Link> / <Link to="/work">Tangible</Link></div>
                 <div>{projects}</div>

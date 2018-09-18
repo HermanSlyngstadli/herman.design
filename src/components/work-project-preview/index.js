@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {Helmet} from "react-helmet";
 
 import './WorkProjectPreview.css';
 
@@ -38,35 +39,47 @@ class Project extends React.Component {
                 backgroundImage:'url('+project.fimg_url+')'
             }
             return (
-                <article key={project.id}>
-                    <div className="project-hero-image-holder">
-                        <div className="project-hero-image" style={styles}></div>
-                        <div className="project-hero-info">
-                            <span>{ project.hero_text }</span>
-                            <h1 className="project-hero-title"> {project.title.rendered}</h1>
-                            <p>{project.short_description}</p>
+                <div>
+                    <Helmet>
+                        <meta name="description" content={project.description} />
+                        <meta name="keywords" content={project.tags} />
+
+                        <meta property="og:site_name" content="Herman Slyngstadli"/>
+                        <meta property="og:url"                content={"http://herman.design/work/"+project.slug} />
+                        <meta property="og:type"               content="website" />
+                        <meta property="og:title"              content={project.title.rendered + ' | Herman Slyngstadli'} />
+                        <meta property="og:description"        content={project.description} />
+                        <meta property="og:image"              content="" />
+
+                        <meta name="twitter:title" content={project.title.rendered + ' | Herman Slyngstadli'} />
+                        <meta name="twitter:image" content=""/>
+                        <meta name="twitter:url" content={"http://herman.design/work/"+project.slug}/>
+                        <meta name="twitter:card" content="summary"/>
+                        <meta name="twitter:description" content={project.description} />
+
+                        <title>{project.title.rendered + ' | Herman Slyngstadli'}</title>
+                    </Helmet>
+                    <article key={project.id}>
+                        <div className="project-hero-image-holder">
+                            <div className="project-hero-image" style={styles}></div>
+                            <div className="project-hero-info">
+                                <span>{ project.hero_text }</span>
+                                <h1 className="project-hero-title"> {project.title.rendered}</h1>
+                                <p>{project.short_description}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="project-component-small-container back-to-projects">
-                        <Link to='/work'><span className="back-to-projects-arrow"></span><span className="back-to-projects-text">{'Back to projects'}</span></Link>
-                    </div>
-                    <div>{this.projectContent(project.content.rendered)}</div>
-                    <div className="previewed-project-floating-title">{'Project: '+project.title.rendered}</div>
-                </article>
+                        <div className="project-component-small-container back-to-projects">
+                            <Link to='/work'><span className="back-to-projects-arrow"></span><span className="back-to-projects-text">{'Back to work'}</span></Link>
+                        </div>
+                        <div>{this.projectContent(project.content.rendered)}</div>
+                        <div className="previewed-project-floating-title">{'Project: '+project.title.rendered}</div>
+                    </article>
+                </div>
             );
         });
         return(
             <div>
                 {project}
-                <div className="more-projects project-component-small-container">
-                    <h2>More projects?</h2>
-                    <div>
-                        <Link to="/work/spotta">{'Spotta'}</Link>
-                        <Link to="/work/chair">{'Chair'}</Link>
-                        <Link to="/work/norway-medical">{'Norway Medical'}</Link>
-                        <Link to="/work/foodprint">{'Foodprint'}</Link>
-                    </div>
-                </div>
             </div>
 
         );
