@@ -7,7 +7,7 @@ class Contact extends React.Component {
     render() {
         return(
             <Layout>
-                <form name="contact" netlify>
+                <form name="contact" action="/thanks" method="POST" data-netlify="true">
                     <p>
                         <label>Name: <input type="text" name="name" /></label>
                     </p>
