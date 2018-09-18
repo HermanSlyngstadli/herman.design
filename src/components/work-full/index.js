@@ -14,7 +14,7 @@ class WorkFull extends React.Component {
     }
 
     componentDidMount() {
-        fetch('http://slyngstadli.no/herman/wp-json/wp/v2/posts?per_page=50')
+        fetch('https://slyngstadli.no/herman/wp-json/wp/v2/posts?per_page=50')
         .then(response => response.json())
         .then(response => {
             this.setState({
@@ -51,7 +51,7 @@ class WorkFull extends React.Component {
                     <meta name="keywords" content="service design, interaction design, design, portfolio, ux, ui, herman slyngstadli" />
 
                     <meta property="og:site_name" content="Herman Slyngstadli"/>
-                    <meta property="og:url"                content="http://herman.design/work" />
+                    <meta property="og:url"                content="https://herman.design/work" />
                     <meta property="og:type"               content="website" />
                     <meta property="og:title"              content="Work | Herman Slyngstadli" />
                     <meta property="og:description"        content="Herman Slyngstadli - Design student specialising in Interaction and Service Design at NTNU, Norway." />
@@ -59,7 +59,7 @@ class WorkFull extends React.Component {
 
                     <meta name="twitter:title" content={"Work | Herman Slyngstadli"}/>
                     <meta name="twitter:image" content=""/>
-                    <meta name="twitter:url" content="http://herman.design/work"/>
+                    <meta name="twitter:url" content="https://herman.design/work"/>
                     <meta name="twitter:card" content="summary"/>
                     <meta name="twitter:description" content="Herman Slyngstadli - Design student specialising in Interaction and Service Design at NTNU, Norway."/>
 

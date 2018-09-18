@@ -21,7 +21,7 @@ class Project extends React.Component {
     // Må gjøres: ----- Fange 404 ved ukjent post
 
     componentDidMount() {
-        fetch('http://slyngstadli.no/herman/wp-json/wp/v2/posts?slug='+this.state.slug)
+        fetch('https://slyngstadli.no/herman/wp-json/wp/v2/posts?slug='+this.state.slug)
         .then(response => response.json())
         .then(response => {
             this.setState({
@@ -50,7 +50,7 @@ class Project extends React.Component {
                         <meta name="keywords" content={project.tags} />
 
                         <meta property="og:site_name" content="Herman Slyngstadli"/>
-                        <meta property="og:url"                content={"http://herman.design/work/"+project.slug} />
+                        <meta property="og:url"                content={"https://herman.design/work/"+project.slug} />
                         <meta property="og:type"               content="website" />
                         <meta property="og:title"              content={project.title.rendered + ' | Herman Slyngstadli'} />
                         <meta property="og:description"        content={project.description} />
@@ -58,7 +58,7 @@ class Project extends React.Component {
 
                         <meta name="twitter:title" content={project.title.rendered + ' | Herman Slyngstadli'} />
                         <meta name="twitter:image" content=""/>
-                        <meta name="twitter:url" content={"http://herman.design/work/"+project.slug}/>
+                        <meta name="twitter:url" content={"https://herman.design/work/"+project.slug}/>
                         <meta name="twitter:card" content="summary"/>
                         <meta name="twitter:description" content={project.description} />
 
