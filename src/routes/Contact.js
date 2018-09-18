@@ -27,20 +27,9 @@ class Contact extends React.Component {
 
                     <title>{'Contact | Herman Slyngstadli'}</title>
                 </Helmet>
-                <form name="contact" action="/thanks" method="POST" data-netlify="true">
-                    <p>
-                        <label>Name: <input type="text" name="name" /></label>
-                    </p>
-                    <p>
-                        <label>Email: <input type="email" name="email" /></label>
-                    </p>
-                    <p>
-                        <label>Message: <textarea name="message"></textarea></label>
-                    </p>
-                    <p>
-                        <button type="submit">Send</button>
-                    </p>
-                </form>
+                <div>
+                    contact form
+                </div>
             </Layout>
         );
     }

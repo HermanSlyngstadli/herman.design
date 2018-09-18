@@ -4,6 +4,11 @@ import {Helmet} from "react-helmet";
 
 import './WorkProjectPreview.css';
 
+import ReactGA from 'react-ga'
+ReactGA.initialize('UA-108289732-3')
+ReactGA.pageview(window.location.pathname + window.location.search);
+
+
 class Project extends React.Component {
     constructor(props) {
         super(props);
@@ -16,7 +21,7 @@ class Project extends React.Component {
     // Må gjøres: ----- Fange 404 ved ukjent post
 
     componentDidMount() {
-        fetch('https://herman.design/wp-json/wp/v2/posts?slug='+this.state.slug)
+        fetch('http://slyngstadli.no/herman/wp-json/wp/v2/posts?slug='+this.state.slug)
         .then(response => response.json())
         .then(response => {
             this.setState({
@@ -39,7 +44,7 @@ class Project extends React.Component {
                 backgroundImage:'url('+project.fimg_url+')'
             }
             return (
-                <div>
+                <div key={project.id}>
                     <Helmet>
                         <meta name="description" content={project.description} />
                         <meta name="keywords" content={project.tags} />
@@ -59,7 +64,7 @@ class Project extends React.Component {
 
                         <title>{project.title.rendered + ' | Herman Slyngstadli'}</title>
                     </Helmet>
-                    <article key={project.id}>
+                    <article>
                         <div className="project-hero-image-holder">
                             <div className="project-hero-image" style={styles}></div>
                             <div className="project-hero-info">

@@ -14,11 +14,11 @@ class WorkFull extends React.Component {
     }
 
     componentDidMount() {
-        fetch('https://herman.design/wp-json/wp/v2/posts?per_page=50')
+        fetch('http://slyngstadli.no/herman/wp-json/wp/v2/posts?per_page=50')
         .then(response => response.json())
         .then(response => {
             this.setState({
-                projects: response.reverse()
+                projects: response
             })
             //console.log(response);
         })
@@ -66,8 +66,6 @@ class WorkFull extends React.Component {
                     <title>{'Work | Herman Slyngstadli'}</title>
                 </Helmet>
 
-                <h1 className="page-title">work</h1>
-                <div className="page-sorting"><Link to="/work">All</Link> / <Link to="/work">Digital</Link> / <Link to="/work">Tangible</Link></div>
                 <div>{projects}</div>
             </div>
         );
@@ -76,3 +74,8 @@ class WorkFull extends React.Component {
 }
 
 export default WorkFull;
+/*
+<h1 className="page-title">work</h1>
+<div className="page-sorting"><Link to="/work">All</Link> / <Link to="/work">Digital</Link> / <Link to="/work">Tangible</Link></div>
+
+*/
