@@ -42,9 +42,9 @@ class Project extends React.Component {
                     <div className="project-hero-image-holder">
                         <div className="project-hero-image" style={styles}></div>
                         <div className="project-hero-info">
-                            <span>Digital / Website</span>
+                            <span>{ project.hero_text }</span>
                             <h1 className="project-hero-title"> {project.title.rendered}</h1>
-                            <p>Lorem ipsum dolor site amet. Mauris feugiat nulla sed nibh dictum blandit.</p>
+                            <p>{project.short_description}</p>
                         </div>
                     </div>
                     <div className="project-component-small-container back-to-projects">
