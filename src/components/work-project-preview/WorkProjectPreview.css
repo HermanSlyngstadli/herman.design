@@ -52,6 +52,18 @@ h1.project-hero-title {
     color:#fff;
 }
 
+@media only screen and (max-width:700px) {
+    .project-hero-image-holder {
+        height:40rem;
+    }
+
+    .project-hero-info {
+        left:7%;
+    }
+    .project-hero-info p {
+        max-width:100%;
+    }
+}
 
 .back-to-projects {
     padding-top:30px;

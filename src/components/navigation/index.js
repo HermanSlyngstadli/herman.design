@@ -10,9 +10,6 @@ export class Navigation extends Component {
     }
 
     render() {
-        var linkedin = {
-            backgroundImage:"url(https://slyngstadli.no/img/linkedin.svg)"
-        }
         return(
             <nav className="main-nav">
                 <Link to='/' className="site-logo">HERMAN SLYNGSTADLI</Link>
