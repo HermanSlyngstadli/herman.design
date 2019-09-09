@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Layout from '../components/layout/';
-import Projects from '../components/work-projects/';
+import Layout from '../layout';
+import Projects from '../work-projects';
 
 const Work = () => (
     <Layout>
