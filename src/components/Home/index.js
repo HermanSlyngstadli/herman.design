@@ -6,7 +6,6 @@ import Projects from '../work-projects';
 const Home = () => (
     <Layout>
         <Projects />
-        
     </Layout>
 )
 

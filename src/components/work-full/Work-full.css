@@ -1,3 +1,8 @@
+.content-inner-wrapper{
+    width:100%;
+    display: flex;
+    flex-wrap:wrap;
+}
 .page-title {
     margin-left:20px;
     font-weight:700;
@@ -7,11 +12,8 @@
     margin-left:20px;
 }
 .work-project-link {
-    height:500px;
-    overflow:hidden;
-    display: block;
-    padding-left:0 !important;
-    padding-right:0 !important;
+    width:33.33333%;
+    height:400px;
     position: relative;
 }
 .work-project-link:after {

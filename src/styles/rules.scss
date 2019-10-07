@@ -1,0 +1,32 @@
+@import "./constants.scss";
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  max-width: 1680px;
+  width: 100%;
+  grid-column-gap: 17px;
+  grid-row-gap: 40px;
+  margin: 0px auto;
+  padding: 0px 1.5rem;
+  padding-bottom: 8rem;
+}
+
+.gridSection {
+  grid-column: 1 / span 12;
+}
+
+@media ($mediumUp) {
+  .grid {
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 73.3px;
+    grid-row-gap: 60px;
+    padding: 0;
+  }
+
+  .gridSection {
+    display: flex;
+    flex-direction: column;
+    grid-column: 3 / 11;
+  }
+}

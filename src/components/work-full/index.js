@@ -20,9 +20,7 @@ class WorkFull extends React.Component {
             this.setState({
                 projects: response
             })
-            //console.log(response);
         })
-
     }
 
     render() {
@@ -31,14 +29,14 @@ class WorkFull extends React.Component {
                 backgroundImage:'url('+project.fimg_url+')'
             };
             return (
-                <Link key={project.id} className="work-project-link col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12" to={{
+                <Link key={project.id} className="work-project-link" to={{
                     pathname: '/work/' + project.slug,
                     state: {
                         postId: project.id
                     }
                 }}>
                     <article className="work-project">
-                    <div style={styles} className="work-project-image"></div>
+                        <div style={styles} className="work-project-image"></div>
                     </article>
                     <div className="work-project-title-holder"><h2 className="work-project-title">{project.title.rendered}</h2></div>
                 </Link>
@@ -66,7 +64,7 @@ class WorkFull extends React.Component {
                     <title>{'Work | Herman Slyngstadli'}</title>
                 </Helmet>
 
-                <div>{projects}</div>
+                <div className="content-inner-wrapper">{projects}</div>
             </div>
         );
     }
@@ -74,8 +72,3 @@ class WorkFull extends React.Component {
 }
 
 export default WorkFull;
-/*
-<h1 className="page-title">work</h1>
-<div className="page-sorting"><Link to="/work">All</Link> / <Link to="/work">Digital</Link> / <Link to="/work">Tangible</Link></div>
-
-*/

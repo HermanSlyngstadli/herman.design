@@ -1,32 +1,20 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import { Header } from '../header/';
-import { Footer } from '../footer/';
+import { Header } from "../header/";
+import { Footer } from "../footer/";
 
-import './Layout.css';
+import styles from "./Layout.module.scss";
 
 class Layout extends Component {
-
-    scrollToTop() {
-        console.log('click');
-    }
-
-    render() {
-        return(
-            <div>
-                <Header />
-                <button id="top-scroller" onClick={this.scrollToTop}></button>
-                    <div className="content-outer-wrapper">
-                        <div className="content-inner-wrapper">
-                            {this.props.children}
-                        </div>
-                    </div>
-                <Footer />
-            </div>
-        );
-    }
-
-
+  render() {
+    return (
+      <div>
+        <Header />
+        <div className={styles.grid}>{this.props.children}</div>
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export default Layout;
