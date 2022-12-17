@@ -1,4 +1,3 @@
-import * as THREE from 'three'
 import React, { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { Bounds, Hud, OrbitControls, PerspectiveCamera } from '@react-three/drei'
